@@ -23,7 +23,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 public class ClienteAtrativaConfig {
 
-	public DataSource clubeFatoDataSource() {
+	public DataSource atrativaDataSource() {
 		DataSource ds = null;
 		try {
 			Context ctx = new InitialContext();
@@ -48,7 +48,7 @@ public class ClienteAtrativaConfig {
 		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
 		factory.setPackagesToScan("com.regis.datasource.model.atrativa");
 		factory.setPersistenceUnitName("ClubefatoMobileDS");
-		factory.setDataSource(clubeFatoDataSource());
+		factory.setDataSource(atrativaDataSource());
 		factory.setPersistenceProviderClass(org.hibernate.jpa.HibernatePersistenceProvider.class);
 		return factory;
 	}
